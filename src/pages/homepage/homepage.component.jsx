@@ -4,12 +4,14 @@ import { HomePageContainer } from './homepage.styles'
 import PropertiesPreview from '../../components/properties-preview/propertiesPreview.component'
 import PROPERTIES_DATA from "./PROPERTIES_DATA"
 
+import NavBar from "../../components/nav-bar/nav-bar.component"
 
 const HomePage = () => 
 {
     console.log(PROPERTIES_DATA.hits)
 return(
     <HomePageContainer>
+        <NavBar />
         <Banner 
             title="RENT A HOME"
             subtitle="RENTAL HOMES FOR EVERYONE"

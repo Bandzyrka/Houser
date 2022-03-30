@@ -6,6 +6,7 @@ export const BannerContainer = styled.div`
     width: 800px;
     height: 300px;
     margin: 50px auto;
+    padding: 30px;
 
 `
 export const ImgContainer = styled.img`

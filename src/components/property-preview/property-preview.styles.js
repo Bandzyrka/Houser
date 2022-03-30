@@ -3,14 +3,19 @@ import styled from 'styled-components'
 export const PropertyPreviewContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 30vw;
     height: 400px;
     font-weight: bold;
+    @media screen and (max-width: 800px){
+        width: 320px;
+    }
+        
     
 `
 export const PropertyImageContainer = styled.img`
-    width: 400px;
+    width: 100%;
     height: 300px;
+    object-fit: cover;
 `
 export const PropertyTopSection = styled.div`
     display: flex;
