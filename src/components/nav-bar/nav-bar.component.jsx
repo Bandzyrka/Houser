@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap"
 import './nav-bar.styles.scss'
 const NavBar = () => (
@@ -9,10 +10,10 @@ const NavBar = () => (
     <Navbar.Collapse >
       <Nav className="ms-auto">
         <NavDropdown>
-          <NavDropdown.Item >Home</NavDropdown.Item>
-          <NavDropdown.Item >Search</NavDropdown.Item>
-          <NavDropdown.Item >Buy property</NavDropdown.Item>
-          <NavDropdown.Item >Rent property</NavDropdown.Item>          
+          <NavDropdown.Item ><Link to="/">Home </Link></NavDropdown.Item>
+          <NavDropdown.Item ><Link to="/search">Search </Link></NavDropdown.Item>
+          <NavDropdown.Item ><Link to="/search?purpose=for-sale">For sale </Link></NavDropdown.Item>
+          <NavDropdown.Item ><Link to="/search?purpose=for-rent">For Rent </Link></NavDropdown.Item>          
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>

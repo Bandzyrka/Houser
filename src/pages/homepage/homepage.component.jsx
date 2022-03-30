@@ -4,8 +4,6 @@ import { HomePageContainer } from './homepage.styles'
 import PropertiesPreview from '../../components/properties-preview/propertiesPreview.component'
 import {fetchApi, baseUrl} from '../../utils/fetchApi'
 
-import NavBar from "../../components/nav-bar/nav-bar.component"
-import Footer from "../../components/footer/footer.component"
 const HomePage = () =>{ 
     const [propertiesForRent, setPropertiesForRent] = useState([])
     const [propertiesForSale, setPropertiesForSale] = useState([])
@@ -16,7 +14,6 @@ const HomePage = () =>{
     }, [])
     return(
     <HomePageContainer>
-        <NavBar />
         <Banner 
             title="RENT A HOME"
             subtitle="RENTAL HOMES FOR EVERYONE"
@@ -33,7 +30,6 @@ const HomePage = () =>{
             imageUrl="https://www.parkcityvacationrentals.com/wp-content/uploads/2020/01/Rental-Homes-in-Park-City-Utah-1.jpeg"
         />
         <PropertiesPreview properties={propertiesForSale} key="propertiesForRent"/>
-        <Footer />
     </HomePageContainer>
 )
 }
