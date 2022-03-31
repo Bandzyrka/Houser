@@ -28,7 +28,7 @@ export const filterData = [
         { name: '85,000', value: '85000' },
       ],
       placeholder: 'Min Price(AED)',
-      queryName: 'minPrice',
+      queryName: 'priceMIN',
     },
     {
       items: [
@@ -50,7 +50,7 @@ export const filterData = [
         { name: '1000,000', value: '1000000' },
       ],
       placeholder: 'Max Price(AED)',
-      queryName: 'maxPrice',
+      queryName: 'priceMax',
     },
     {
       items: [

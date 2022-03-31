@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {filterData, getFilterValues} from './filtersData'
 import {useSearchParams} from 'react-router-dom'
 import {Form} from 'react-bootstrap'
@@ -6,7 +6,6 @@ import {Form} from 'react-bootstrap'
 const SearchFilters = () => {
     const [filters] = useState(filterData)
     const [searchParams, setSearchParams] = useSearchParams()
-
     
     const searchProperties = (filterValues) => {
         const values = getFilterValues(filterValues)
@@ -17,10 +16,6 @@ const SearchFilters = () => {
           }
         })
       };
-    useEffect(() => {
-        const params = new URLSearchParams(window.location.search)
-        console.log(params.toString())
-    }, [])
     return(
             filters.map(filter => (
                 <Form.Select key={filter.placeholder}  onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })}>
