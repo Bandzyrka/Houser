@@ -9,7 +9,6 @@ export const PropertyPreviewContainer = styled.div`
     @media screen and (max-width: 800px){
         width: 320px;
     }
-        
     
 `
 export const PropertyImageContainer = styled.img`
@@ -48,6 +47,6 @@ export const DescriptionContainer = styled.div`
     width: 100%;
     height: 30px;
     white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `

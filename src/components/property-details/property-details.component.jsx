@@ -1,19 +1,42 @@
 import React from 'react';
-import {PropertyDetailsContainer} from './property-details.styles'
 import {Carousel} from 'react-bootstrap'
+import {BsCheckCircleFill} from 'react-icons/bs'
+import {FaBed, FaBath} from 'react-icons/fa'
+import {CgShapeSquare} from 'react-icons/cg'
 
-const PropertDetails = ({data: {photos}}) => (
+import {PropertyDetailsContainer, PropertyFooterContainer, CarouselContainer, PropertyBodyContainer, DescriptionContainer, PropertyTitleContainer, PropertyIconsContainer} from './property-details.styles'
+const PropertDetails = ({data: {photos, id, purpose, type, rooms, price, baths, area, description, agency, title}}) => (
     <PropertyDetailsContainer>
-        <Carousel>
+        <CarouselContainer >
         {
             photos.map(photo => (
-                <Carousel.Item key={photo.id}>
-                    <img className="d-block w-100" src={photo.url} alt={photo.title}/>
+                <Carousel.Item key={photo.id} interval={2500}>
+                    <img src={photo.url} alt={photo.title}/>
                 </Carousel.Item>
             ))
         }
-        </Carousel>
+        </CarouselContainer>
+        <PropertyBodyContainer>
+        
+        <PropertyTitleContainer>
+            <div><BsCheckCircleFill style={{color: "green"}}/> {title}</div> <div>{price} $ </div>
+        </PropertyTitleContainer>
+        
+        <PropertyIconsContainer>
+            <FaBed/> {rooms} 
+            <FaBath />{baths} 
+            <CgShapeSquare/> {area} m2
+        </PropertyIconsContainer>
+        
+        <DescriptionContainer>
+            {description}
+        </DescriptionContainer>
+        </PropertyBodyContainer>
+        
+        <PropertyFooterContainer> 
+            <div>TYPE: {type} </div> <div>PUROPSE: {purpose}</div>
+        </PropertyFooterContainer>
     </PropertyDetailsContainer>
-)
+    )
 
 export default PropertDetails
