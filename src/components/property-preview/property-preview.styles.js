@@ -15,6 +15,7 @@ export const PropertyImageContainer = styled.img`
     width: 100%;
     height: 300px;
     object-fit: cover;
+    cursor: pointer;
 `
 export const PropertyTopSection = styled.div`
     display: flex;

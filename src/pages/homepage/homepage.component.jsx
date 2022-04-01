@@ -20,6 +20,7 @@ const HomePage = () =>{
             description="Explore from Apartments, builder floors, villas and more"
             buttonText="EXPLORE RENTING"
             imageUrl="https://www.parkcityvacationrentals.com/wp-content/uploads/2020/01/Rental-Homes-in-Park-City-Utah-1.jpeg"
+            url="/search?puropse=for-rent"    
         />
         <PropertiesPreview properties={propertiesForRent} key="propertiesForSale"/>
         <Banner 
@@ -28,6 +29,7 @@ const HomePage = () =>{
             description="Explore from Apartments, builder floors, villas and more"
             buttonText="EXPLORE BUYING"
             imageUrl="https://assets.themortgagereports.com/wp-content/uploads/2021/02/Is-now-A-Good-Time-To-BUy-A-House_.jpg"
+            url="/search?puropse=for-sale"
         />
         <PropertiesPreview properties={propertiesForSale} key="propertiesForRent"/>
     </HomePageContainer>
