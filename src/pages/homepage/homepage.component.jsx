@@ -3,7 +3,7 @@ import Banner from "../../components/banner/banner.component";
 import { HomePageContainer } from './homepage.styles'
 import PropertiesPreview from '../../components/properties-preview/propertiesPreview.component'
 import {fetchApi, baseUrl} from '../../utils/fetchApi'
-
+import {Spinner} from 'react-bootstrap'
 const HomePage = () =>{ 
     const [propertiesForRent, setPropertiesForRent] = useState([])
     const [propertiesForSale, setPropertiesForSale] = useState([])
@@ -22,7 +22,7 @@ const HomePage = () =>{
             imageUrl="https://www.parkcityvacationrentals.com/wp-content/uploads/2020/01/Rental-Homes-in-Park-City-Utah-1.jpeg"
             url="/search?puropse=for-rent"    
         />
-        <PropertiesPreview properties={propertiesForRent} key="propertiesForSale"/>
+        {propertiesForSale.length !== 0 ? <PropertiesPreview properties={propertiesForRent} key="propertiesForSale"/>: <Spinner animation="border" style={{margin: "auto"}}/>}
         <Banner 
             title="BUY A HOME"
             subtitle="FIND YOUR DREAM HOME"
@@ -31,7 +31,8 @@ const HomePage = () =>{
             imageUrl="https://assets.themortgagereports.com/wp-content/uploads/2021/02/Is-now-A-Good-Time-To-BUy-A-House_.jpg"
             url="/search?puropse=for-sale"
         />
-        <PropertiesPreview properties={propertiesForSale} key="propertiesForRent"/>
+        {propertiesForRent.length !== 0 ?<PropertiesPreview properties={propertiesForSale} key="propertiesForRent"/>: <Spinner animation="border" style={{margin: "auto"}}/>}
+        
     </HomePageContainer>
 )
 }

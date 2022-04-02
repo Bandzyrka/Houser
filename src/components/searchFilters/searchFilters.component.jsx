@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {filterData, getFilterValues} from './filtersData'
 import {useSearchParams} from 'react-router-dom'
 import {Form} from 'react-bootstrap'
-
+import { FilterContainer } from "./searchFilters.styles";
 const SearchFilters = () => {
     const [filters] = useState(filterData)
     const [searchParams, setSearchParams] = useSearchParams()
@@ -17,13 +17,16 @@ const SearchFilters = () => {
         })
       };
     return(
-            filters.map(filter => (
+            
+          filters.map(filter => (
+                <FilterContainer>
                 <Form.Select key={filter.placeholder}  onChange={(e) => searchProperties({ [filter.queryName]: e.target.value })}>
                 <option> {filter.placeholder} </option>
                     {
                         filter.items.map(item => (<option key={item.value} value={item.value}> {item.name} </option>))
                     }
                 </Form.Select>
+                </FilterContainer>
             ))
     )
 }
