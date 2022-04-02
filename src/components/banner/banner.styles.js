@@ -5,7 +5,7 @@ export const BannerContainer = styled.div`
     display: flex;
     width: 800px;
     height: 300px;
-    margin: 50px auto;
+    margin: 60px auto;
 
 `
 export const ImgContainer = styled.img`

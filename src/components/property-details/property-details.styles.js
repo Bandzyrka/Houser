@@ -5,16 +5,20 @@ export const PropertyDetailsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 80px;
-    padding: 20px;
+    margin: 80px auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width: 900px;
 `
 export const CarouselContainer = styled(Carousel)`
-    width: 800px;
+    width: 900px;
     height: 400px;
     overflow: hidden;
     img{
     width: 100%;
     height: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 `
 export const PropertyBodyContainer = styled.div`
@@ -49,6 +53,7 @@ export const PropertyIconsContainer = styled.div`
     svg{
         font-size: 20px;
         color: #00aeff;
+        filter: drop-shadow(3px 2px 3px rgb(0 0 0 / 0.3));
     }
 `
 export const PropertyFooterContainer = styled.div`
@@ -59,4 +64,9 @@ export const PropertyFooterContainer = styled.div`
     padding: 5px;
     font-weight: bold;
     justify-content: space-between;
+`
+export const Divider = styled.hr`
+    margin: 0 auto;
+    width: 94%;
+    border-top: 1px solid #8c8b8b;
 `

@@ -6,7 +6,7 @@ export const PropertiesPreviewContainer = styled.div`
     align-self: center;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
     @media screen and (max-width: 800px){
         grid-template-columns: 1fr 1fr ;
         gap: 5px;

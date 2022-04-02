@@ -20,7 +20,8 @@ const HomePage = () =>{
             description="Explore from Apartments, builder floors, villas and more"
             buttonText="EXPLORE RENTING"
             imageUrl="https://www.parkcityvacationrentals.com/wp-content/uploads/2020/01/Rental-Homes-in-Park-City-Utah-1.jpeg"
-            url="/search?puropse=for-rent"    
+            url="/search?puropse=for-rent" 
+             
         />
         {propertiesForSale.length !== 0 ? <PropertiesPreview properties={propertiesForRent} key="propertiesForSale"/>: <Spinner animation="border" style={{margin: "auto"}}/>}
         <Banner 
