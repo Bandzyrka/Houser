@@ -5,7 +5,7 @@ import SearchFilters from '../../components/searchFilters/searchFilters.componen
 import { useSearchParams } from 'react-router-dom';
 import {fetchApi, baseUrl} from '../../utils/fetchApi'
 import PropertiesPreview from '../../components/properties-preview/propertiesPreview.component';
-import { Spinner } from 'react-bootstrap';
+
 const SearchPage = () => {
     const [showFilter, toggleFilter] = useState(false)
     const [properties, setProperties] = useState([])
@@ -29,7 +29,7 @@ const SearchPage = () => {
             :
             null
         }
-        {properties.length !== 0 ? <PropertiesPreview properties={properties} key="properties"/> : <Spinner animation="border" style={{margin: "auto"}}/>}
+        <PropertiesPreview properties={properties} key="properties"/>
     </SearchPageContainer>
 )}
  

@@ -28,7 +28,7 @@ export const filterData = [
         { name: '85,000', value: '85000' },
       ],
       placeholder: 'Min Price(AED)',
-      queryName: 'priceMin',
+      queryName: 'priceMIN',
     },
     {
       items: [
@@ -56,6 +56,7 @@ export const filterData = [
       items: [
         { name: 'Lowest Price', value: 'price-asc' },
         { name: 'Highest Price', value: 'price-des' },
+        { name: 'Newest', value: 'date-asc' },
         { name: 'Oldest', value: 'date-desc' },
         { name: 'Verified', value: 'verified-score' },
         { name: 'City Level Score', value: 'city-level-score' },
@@ -138,14 +139,13 @@ export const filterData = [
       purpose,
       rentFrequency,
       categoryExternalID,
-      priceMin,
-      priceMax,
+      minPrice,
+      maxPrice,
       areaMax,
       roomsMin,
       bathsMin,
       sort,
       locationExternalIDs,
-      furnishingStatus,
     } = filterValues;
   
     const values = [
@@ -158,12 +158,12 @@ export const filterData = [
         value: rentFrequency,
       },
       {
-        name: 'priceMin',
-        value: priceMin,
+        name: 'minPrice',
+        value: minPrice,
       },
       {
-        name: 'priceMax',
-        value: priceMax,
+        name: 'maxPrice',
+        value: maxPrice,
       },
       {
         name: 'areaMax',
@@ -189,8 +189,6 @@ export const filterData = [
         name: 'categoryExternalID',
         value: categoryExternalID,
       },
-      { name: 'furnishingStatus',
-        value: furnishingStatus}
     ];
   
     return values;

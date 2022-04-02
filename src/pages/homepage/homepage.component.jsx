@@ -3,7 +3,7 @@ import Banner from "../../components/banner/banner.component";
 import { HomePageContainer } from './homepage.styles'
 import PropertiesPreview from '../../components/properties-preview/propertiesPreview.component'
 import {fetchApi, baseUrl} from '../../utils/fetchApi'
-import {Spinner} from 'react-bootstrap'
+
 const HomePage = () =>{ 
     const [propertiesForRent, setPropertiesForRent] = useState([])
     const [propertiesForSale, setPropertiesForSale] = useState([])
@@ -23,7 +23,7 @@ const HomePage = () =>{
             url="/search?puropse=for-rent" 
              
         />
-        {propertiesForSale.length !== 0 ? <PropertiesPreview properties={propertiesForRent} key="propertiesForSale"/>: <Spinner animation="border" style={{margin: "auto"}}/>}
+        <PropertiesPreview properties={propertiesForRent} key="propertiesForSale"/>
         <Banner 
             title="BUY A HOME"
             subtitle="FIND YOUR DREAM HOME"
@@ -32,8 +32,7 @@ const HomePage = () =>{
             imageUrl="https://assets.themortgagereports.com/wp-content/uploads/2021/02/Is-now-A-Good-Time-To-BUy-A-House_.jpg"
             url="/search?puropse=for-sale"
         />
-        {propertiesForRent.length !== 0 ?<PropertiesPreview properties={propertiesForSale} key="propertiesForRent"/>: <Spinner animation="border" style={{margin: "auto"}}/>}
-        
+        <PropertiesPreview properties={propertiesForSale} key="propertiesForRent"/>
     </HomePageContainer>
 )
 }
