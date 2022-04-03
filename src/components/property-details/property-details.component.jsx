@@ -4,8 +4,8 @@ import {BsCheckCircleFill} from 'react-icons/bs'
 import {FaBed, FaBath} from 'react-icons/fa'
 import {CgShapeSquare} from 'react-icons/cg'
 
-import {Divider, PropertyDetailsContainer, PropertyFooterContainer, CarouselContainer, PropertyBodyContainer, DescriptionContainer, PropertyTitleContainer, PropertyIconsContainer} from './property-details.styles'
-const PropertDetails = ({data: {photos, id, purpose, type, rooms, price, baths, area, description, agency, title}}) => (
+import {PropertyAmenitiesContainer, AmenityContainer, Divider, PropertyDetailsContainer, PropertyFooterContainer, CarouselContainer, PropertyBodyContainer, DescriptionContainer, PropertyTitleContainer, PropertyIconsContainer} from './property-details.styles'
+const PropertDetails = ({data: {photos, amenities, purpose, type, rooms, price, baths, area, description, agency, title}}) => (
     <PropertyDetailsContainer>
         <CarouselContainer >
         {
@@ -32,7 +32,16 @@ const PropertDetails = ({data: {photos, id, purpose, type, rooms, price, baths, 
             {description}
         </DescriptionContainer>
         </PropertyBodyContainer>
-        
+        <PropertyAmenitiesContainer>
+            {
+                amenities.map(item => (
+                    item.amenities.map(
+                        amenity => (
+                            <AmenityContainer>{amenity.text}</AmenityContainer>
+                            ))))
+                
+            }
+        </PropertyAmenitiesContainer>
         <PropertyFooterContainer> 
             <div>TYPE: {type} </div> <div>PUROPSE: {purpose}</div>
         </PropertyFooterContainer>

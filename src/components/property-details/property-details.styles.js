@@ -27,8 +27,8 @@ export const PropertyBodyContainer = styled.div`
 `
 export const DescriptionContainer = styled.div`
     padding: 5px;
-    text-align: left;
-    font-size: 16px
+    text-align: center;
+    font-size: 15px
 
 `
 export const PropertyTitleContainer = styled.div`
@@ -69,4 +69,22 @@ export const Divider = styled.hr`
     margin: 0 auto;
     width: 94%;
     border-top: 1px solid #8c8b8b;
+`
+export const PropertyAmenitiesContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 800px;
+    padding: 5px;
+    gap: 5px;
+    justify-content: center;
+`
+export const AmenityContainer = styled.div`
+    background-color: #00aeff;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.09), 0 6px 6px rgba(0,0,0,0.13);
+    text-shadow: 2px 2px rgb(0, 0, 0, 0.2);
 `
