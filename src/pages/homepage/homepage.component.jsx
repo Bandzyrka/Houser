@@ -3,12 +3,13 @@ import Banner from "../../components/banner/banner.component";
 import { HomePageContainer } from './homepage.styles'
 import PropertiesPreview from '../../components/properties-preview/propertiesPreview.component'
 import {fetchApi, baseUrl} from '../../utils/fetchApi'
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner.component'
 
 const HomePage = () =>{ 
     const [propertiesForRent, setPropertiesForRent] = useState([])
     const [propertiesForSale, setPropertiesForSale] = useState([])
 
-    useEffect(() =>{
+    useEffect(() =>{ 
         fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`).then(response =>setPropertiesForSale(response.hits))
         fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`).then(response => setPropertiesForRent(response.hits))
     }, [])
@@ -23,7 +24,7 @@ const HomePage = () =>{
             url="/search?puropse=for-rent" 
              
         />
-        <PropertiesPreview properties={propertiesForRent} key="propertiesForSale"/>
+        {propertiesForRent.length !== 0 ? <PropertiesPreview properties={propertiesForRent} key="propertiesForSale"/> : <LoadingSpinner />}
         <Banner 
             title="BUY A HOME"
             subtitle="FIND YOUR DREAM HOME"
@@ -32,7 +33,7 @@ const HomePage = () =>{
             imageUrl="https://assets.themortgagereports.com/wp-content/uploads/2021/02/Is-now-A-Good-Time-To-BUy-A-House_.jpg"
             url="/search?puropse=for-sale"
         />
-        <PropertiesPreview properties={propertiesForSale} key="propertiesForRent"/>
+        {propertiesForSale.length !== 0 ? <PropertiesPreview properties={propertiesForSale} key="propertiesForRent"/>: <LoadingSpinner />}
     </HomePageContainer>
 )
 }
