@@ -13,4 +13,7 @@ export const ToggleSearchFilter = styled.div`
 `
 export const FilterContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 `

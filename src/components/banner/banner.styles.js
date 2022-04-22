@@ -6,10 +6,18 @@ export const BannerContainer = styled.div`
     width: 800px;
     height: 300px;
     margin: 60px auto;
+    @media screen and (max-width: 800px)
+    { 
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: auto;
+        width: auto;
+    }
 
 `
 export const ImgContainer = styled.img`
-    width: 600px;
+    width: 100%;
     height: 300px;
     padding: 10px;
     
@@ -27,7 +35,7 @@ export const TitleContainer = styled(Badge)`
     color: white;
     font-weight: 600;
     font-size: 1.2rem;
-    margin: 10px 0px
+    margin: 10px 0px;
 `
 export const SubtitleContainer = styled.div`
     color: black;
@@ -39,7 +47,7 @@ export const SubtitleContainer = styled.div`
 export const DescriptionContainer = styled.div`
     font-weight: 350;
     font-size: 1.3rem;
-    margin: 10px 0px
+    margin: 10px 0px;
 `
 export const ButtonContainer = styled(Button)`
     width: 150px;

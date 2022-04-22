@@ -12,6 +12,10 @@ export const PropertyPreviewContainer = styled.div`
     @media screen and (max-width: 800px){
         width: 320px;
     }
+    @media screen and (max-width:650px)
+    { 
+        width: 400px;
+    }
     
 `
 export const PropertyImageContainer = styled.img`

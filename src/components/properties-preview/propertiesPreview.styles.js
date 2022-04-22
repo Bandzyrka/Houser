@@ -9,8 +9,9 @@ export const PropertiesPreviewContainer = styled.div`
     gap: 20px;
     @media screen and (max-width: 800px){
         grid-template-columns: 1fr 1fr ;
-        gap: 5px;
     }
-        
+    @media screen and (max-width: 650px){
+        grid-template-columns: 1fr;
+    }   
     
 `   
